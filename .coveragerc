@@ -1,0 +1,6 @@
+[run]
+branch = True
+source = falcon_policy
+omit = tests/*
+
+[report]
