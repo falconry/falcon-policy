@@ -1,5 +1,5 @@
-Falcon Middleware: Policy Middleware
-============================================================
+Falcon Middleware: Policy Middleware |Build Status| |codecov.io|
+================================================================
 
 The ``falcon-policy`` package provides a middleware component
 that enables simple policy controls such as role-based access on routes
@@ -102,3 +102,9 @@ framework <http://falconframework.org/index.html>`__ for building lean and
 mean cloud APIs and app backends. It encourages the REST architectural style,
 and tries to do as little as possible while remaining `highly
 effective <http://falconframework.org/index.html#Benefits>`__.
+
+
+.. |Build Status| image:: https://travis-ci.org/falconry/falcon-policy.svg
+   :target: https://travis-ci.org/falconry/falcon-policy
+.. |codecov.io| image:: https://codecov.io/gh/falconry/falcon-policy/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/falconry/falcon-policy
