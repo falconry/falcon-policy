@@ -9,7 +9,7 @@ with open('README.rst') as f:
 setup(
     name='falcon-policy',
     version='0.0.1',
-    description=('RBAC middleware for Falcon APIs'),
+    description=('Policy middleware for Falcon APIs'),
     long_description=desc,
     url='https://github.com/falconry/falcon-policy',
     author='John Vrbanac',

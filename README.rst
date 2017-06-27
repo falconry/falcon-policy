@@ -1,9 +1,13 @@
-Falcon Middleware: Policy Controls
+Falcon Middleware: Policy Middleware
 ============================================================
 
 The ``falcon-policy`` package provides a middleware component
-that enables simple policy controls such as role-based access on routes.
+that enables simple policy controls such as role-based access on routes
+via configuration.
 
+The configuration approach to policy rules enables dynamic authorization
+use-cases where the policy needs to be adjusted on-demand without a new
+service deployment.
 
 Installation
 ------------
