@@ -20,8 +20,12 @@ Usage
 -----
 
 The ``RoleBasedPolicy`` middleware class examines each incoming request
-and verifies the ``X-Roles`` header for the appropriate role given the request
-being made.
+and verifies the ``roles`` list from the request context; which should be
+populated by an authentication middleware. If the request context
+isn't populated with a ``roles`` list, then the middleware will fall back
+on the ``X-Roles`` header for the appropriate role given the request being made.
+Usage of the ``X-Roles`` header, is primarily used when handling authentication
+outside of the middleware stack or for development with authentication disabled.
 
 Getting Started:
 
