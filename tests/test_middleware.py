@@ -37,19 +37,29 @@ sample_config = {
 }
 
 
-def create_req_stub(uri, method, roles_header, context=None):
+def create_req_stub(uri, method, roles_header, context=None,
+                    context_type=None):
     return stub(
         uri_template=uri,
         method=method,
         get_header=lambda name, default: roles_header,
-        context=context or {}
+        context=context or {},
+        context_type=context_type or dict,
     )
 
 
 def test_failover_to_header():
     middleware = RoleBasedPolicy(sample_config)
 
-    req_stub = create_req_stub('/plainroles', 'HEAD', '@unknown')
+    req_stub = create_req_stub('/plainroles', 'head', '@unknown')
+    middleware.process_resource(req_stub, None, None, None)
+
+
+def test_object_context_type():
+    middleware = RoleBasedPolicy(sample_config)
+    context = stub(roles=['@unknown'])
+
+    req_stub = create_req_stub('/plainroles', 'head', None, context, object)
     middleware.process_resource(req_stub, None, None, None)
 
 

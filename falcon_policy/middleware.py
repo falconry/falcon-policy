@@ -12,7 +12,12 @@ class RoleBasedPolicy(object):
     def process_resource(self, req, resp, resource, params):
         route = req.uri_template
 
-        roles = req.context.get('roles')
+        if issubclass(req.context_type, dict):
+            roles = req.context.get('roles')
+
+        # Assume it's a direct attribute
+        else:
+            roles = req.context.roles
 
         # Fallback on the X-Roles Header
         if not roles:
