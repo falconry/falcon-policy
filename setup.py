@@ -8,7 +8,7 @@ with open('README.rst') as f:
 
 setup(
     name='falcon-policy',
-    version='0.1.0',
+    version='0.2.0',
     description=('Policy middleware for Falcon APIs'),
     long_description=desc,
     url='https://github.com/falconry/falcon-policy',
